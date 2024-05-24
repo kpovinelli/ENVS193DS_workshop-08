@@ -95,11 +95,11 @@ ggpairs(drought_exp_clean, # data frame
 
 Choose 3 pairs of variables to compare. Make notes of those comparisons below.    
 
-**insert comparison 1 here**  
+**Leaf dry weight is strongly positively correlated with total mass (Pearson's r = 0.46).**  
 
-**insert comparison 2 here**  
+**Shoot mass is strongly positvely correlated with total mass (Pearson's r = 0.902).**  
 
-**insert comparison 3 here**
+**Root mass is strongly positvely correlated with total mass (Pearson's r = 0.58).**
 
 ## Preliminary visualizations  
 
@@ -123,7 +123,7 @@ ggplot(data = drought_exp_clean, # data frame
               height = 0) # not jittering points up and down
 ```
 
-**response here**
+**Gumweed, california poppy, and purple needlegrass seem to have the highest biomass. Deerweed, scarlet bugler, and purple sage seem to have the lowest biomass.**
 
 ### how does total biomass differ between water treatments?
 
@@ -135,7 +135,7 @@ ggplot(data = drought_exp_clean, # data frame
               height = 0) # not jittering points up and down
 ```
 
-**response here**
+**Total biomass seems to be larger in well watered plants than drought stressed plants.**
 
 ### how does specific leaf area (SLA) influence total biomass?
 
@@ -146,17 +146,17 @@ ggplot(data = drought_exp_clean, # data frame
   geom_point() # scatterplot
 ```
 
-**response here**
+**Plants with a larger specific leaf area seems to have a larger total mass. There is a moderate positive correlation between specific leaf area and total mass.**
 
 # Model construction
 
 What is the null model?  
 
-0. **null model here**  
+0. **total biomass as a function of none of the predictors**  
 
 What is the saturated model?  
 
-1. **saturated model here**  
+1. **total biomass as a function of specific leaf area, water treatment, and species**  
 
 In class we are going to try two more models:  
 
@@ -187,6 +187,7 @@ par(mfrow = c(2, 2))
 plot(model1)
 # you might get a warning when you run this code - that is ok!
 ```
+**Diagnostics look ok!**
 
 ## 2. total biomass as a function of SLA and water treatment
 
@@ -196,6 +197,7 @@ model2 <- lm(total_g ~ sla + water_treatment,
 
 plot(model2)
 ```
+**Look at diagnostics**
 
 ## 3. total biomass as a function of SLA and species
 
@@ -205,6 +207,7 @@ model3 <- lm(total_g ~ sla + species_name,
 
 plot(model3)
 ```
+**Look at diagnostics**
 
 # Model selection
 
@@ -217,9 +220,11 @@ model.sel(model0,
           model3)
 ```
 
-Out of the four models we have tried, the best model is the one that includes **insert predictors here**  
+Out of the four models we have tried, the best model is the one that includes **Model 1 is the best model. This is because the AICc value is the lowest and the delta value is 0. specific leaf area, water treatment, and species (saturated model)**  
 
 Note that this may change once you fit and compare the other model!
+
+**DOUBLE CHECK DIAGNOStiCS FOR THE BEST MODEL**
 
 # Model summary
 
@@ -232,14 +237,14 @@ What are the reference levels?
 - reference for `water_treatment`  
 - reference for `species_name`  
 
-**reference for water_treatment:** **insert response here**  
-**reference for species_name:** **insert response here**  
+**reference for water_treatment:** **drought treatment, doesn't show in model**  
+**reference for species_name:** **Acmispon glaber (deerweed)**  
 
 Interpret the model estimates for the:  
 
-- intercept: **insert response here**  
-- SLA slope: **insert response here**  
-- well watered estimate: **insert response here**    
+- intercept: **mass of the reference (Acmispon glaber) in drought stressed water treatment when SLA = 0**  
+- SLA slope: **for each 1 unit increase in SLA (mm^2/g), you expect a decrease in plant mass of  0.0002 +- (figure out how to display plus minus in doc) 0.0005, SO NO EFFECT OF SLA ON MASS**  
+- well watered estimate: **on average across species and SLA, well watered plants tend to be 0.12 +- 0.02 g heavier (or more massive) than drought stressed plants**    
 - Lotus scoparius estimate: **insert response here**    
 - Stipa pulchra estimate: **insert response here**    
 
