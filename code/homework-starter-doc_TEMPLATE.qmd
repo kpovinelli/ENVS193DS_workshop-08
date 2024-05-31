@@ -209,6 +209,16 @@ plot(model3)
 ```
 **Look at diagnostics**
 
+## 4. total biomass as a function of water treatment and species
+
+```{r}
+model4 <- lm(total_g ~ water_treatment + species_name,
+             data = drought_exp_clean)
+
+plot(model4)
+```
+**Look at diagnostics**
+
 # Model selection
 
 From the `MuMIn` package
@@ -217,10 +227,11 @@ From the `MuMIn` package
 model.sel(model0,
           model1, 
           model2, 
-          model3)
+          model3,
+          model4)
 ```
 
-Out of the four models we have tried, the best model is the one that includes **Model 1 is the best model. This is because the AICc value is the lowest and the delta value is 0. specific leaf area, water treatment, and species (saturated model)**  
+Out of the four models we have tried, the best model is the one that includes **Model 4 is the best model. This is because the AICc value is the lowest (-156.2) and the delta value is 0. specific leaf area, water treatment, and species (saturated model)**  
 
 Note that this may change once you fit and compare the other model!
 
@@ -330,7 +341,8 @@ modelsummary::modelsummary( # this function takes a list of models
     "null" = model0, # "model name" = model object
     "model 1" = model1,
     "model 2" = model2,
-    "model 3" = model3
+    "model 3" = model3,
+    "model 4" = model4
   )
 ) 
 
