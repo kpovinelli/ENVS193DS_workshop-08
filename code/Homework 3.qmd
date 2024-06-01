@@ -1,5 +1,125 @@
 ---
 title: "Homework 3"
-format: html
-editor: visual
+format:
+  html: 
+    toc: true # includes a table of contents in rendered html format
+execute: # for all code chunks
+    warning: false # do not display warnings
+    message: false # do not display messages
 ---
+
+# Set up
+
+## Reading in packages
+```{r}
+# general use
+library(tidyverse)
+library(readxl)
+library(here)
+library(janitor)
+
+# visualizing pairs
+library(GGally)
+
+# model selection
+library(MuMIn)
+
+# model predictions
+library(ggeffects)
+
+# model tables
+library(gtsummary)
+library(flextable)
+library(modelsummary)
+
+drought_exp <- read_xlsx(path = here("data", 
+                                     "Valliere_etal_EcoApps_Data.xlsx"),
+                         sheet = "First Harvest")
+
+# quick look at data 
+str(drought_exp)
+class(drought_exp)
+```
+
+## Data cleanup
+```{r}
+# cleaning
+drought_exp_clean <- drought_exp %>% 
+  clean_names() %>% # nicer column names
+  mutate(species_name = case_when( # adding column with species scientific names
+    species == "ENCCAL" ~ "Encelia californica", # bush sunflower
+    species == "ESCCAL" ~ "Eschscholzia californica", # California poppy
+    species == "PENCEN" ~ "Penstemon centranthifolius", # Scarlet bugler
+    species == "GRICAM" ~ "Grindelia camporum", # great valley gumweed
+    species == "SALLEU" ~ "Salvia leucophylla", # Purple sage
+    species == "STIPUL" ~ "Nasella pulchra", # Purple needlegrass
+    species == "LOTSCO" ~ "Acmispon glaber" # deerweed
+  )) %>% 
+  relocate(species_name, .after = species) %>% # moving species_name column after species
+  mutate(water_treatment = case_when( # adding column with full treatment names
+    water == "WW" ~ "Well watered",
+    water == "DS" ~ "Drought stressed"
+  )) %>% 
+  relocate(water_treatment, .after = water) # moving water_treatment column after water
+```
+
+# Model code
+```{r}
+# Null model
+model0 <- lm(total_g ~ 1, # formula
+             data = drought_exp_clean) # data frame
+
+# Model 1: total biomass as a function of SLA, water treatment, and species
+model1 <- lm(total_g ~ sla + water_treatment + species_name,
+             data = drought_exp_clean)
+par(mfrow = c(2, 2))
+
+# Model 2: total biomass as a function of SLA and water treatment
+model2 <- lm(total_g ~ sla + water_treatment,
+             data = drought_exp_clean)
+
+# Model 3: total biomass as a function of SLA and species
+model3 <- lm(total_g ~ sla + species_name,
+             data = drought_exp_clean)
+
+# Model 4: total biomass as a function of water treatment and species
+model4 <- lm(total_g ~ water_treatment + species_name,
+             data = drought_exp_clean)
+# Determines best model
+model.sel(model0,
+          model1, 
+          model2, 
+          model3,
+          model4)
+# plots model 4 to use in question 1b
+plot(model4)
+
+```
+
+# Problem 1
+## a. 
+```{r}
+
+# table
+## puts models into a list
+models <- list( 
+    "null" = model0, # "model name" = model object
+    "model 1" = model1,
+    "model 2" = model2,
+    "model 3" = model3,
+    "model 4" = model4)
+
+modelsummary(models, # this function takes a list of models
+             title = "Table 1: Multiple linear regression of the 5 models. The rows showcase the predictors for each model. The columns show each numbered model." # table title
+             ) 
+
+
+```
+
+## b.
+**To examine the influence of specific leaf area, water treatment, and species on total biomass, I created 5 models. The null model was a function of none of the predictors on total biomass, while model 1 was a function of all of the predictors on total biomass. Models 2, 3, and 4 were functions of 2 different predictors on total biomass. To determine the model that best described the influences on total biomass, I used multiple linear regression and found that model 4 (total biomass as a function of water treatment and species) had the lowest AIC value (-159.2). To evaluate linear model assumptions, I plotted model 4 and found that it was linear, normally distributed, homoscedastic, and has no high leverage points.**
+
+## c.
+
+
+
