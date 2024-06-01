@@ -352,3 +352,10 @@ modelsummary::modelsummary( # this function takes a list of models
 
 **Note 2: you will always have to report the F-statistic, degrees of freedom, test statistic, p-value, ⍺, and R^2^. Whether or not this information is in a table is up to you.**
 
+# Problem 2
+
+
+# Problem 3
+
+## a.
+
