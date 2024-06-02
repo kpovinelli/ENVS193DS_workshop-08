@@ -147,11 +147,11 @@ ggpredict(model4,
 **INSERT FIGURE 1**
 
 ## b. 
-**The first graph is a line plot which shows the probability of food insecurity (y-axis) based on the number of disabilities (x-axis). The second graph is a  histogram plot which shows the probability of food insecurity (y-axis) based on the category of disability (x-axis). The author's choice to separate these graphs made senese since number of disabilities is continuous data and the catergory of disability is categorical data. Both graphs show the mean probability of food insecurity and the standard error, but do not show the underlying data.**
+**The first graph is a line plot which shows the probability of food insecurity (y-axis) based on the number of disabilities (x-axis). The second graph is a  histogram plot which shows the probability of food insecurity (y-axis) based on the category of disability (x-axis). The author's choice to separate these graphs made sense since number of disabilities is continuous data and the category of disability is categorical data. Both graphs show the mean probability of food insecurity and the standard error, but do not show the underlying data.**
 
 ## c.
-**The authors did a good job handling 'visual clutter.' They graphs are relatively simple and primarily focus on the probabilities for each x value. The data:ink ratio is relatively high. There data is portrayed in a simple matter and is not cluttered or overwhelmed by gridlines and extraneous elements.**
+**The authors did a good job handling 'visual clutter.' They graphs are relatively simple and primarily focus on the probabilities for each x value. The data:ink ratio is relatively high. There data is portrayed in a simple matter and is not cluttered or overwhelmed by grid lines and extraneous elements.**
 
 ## d.
-****
+**One recommendation I have is to change the y-axis values. Instead of probability represented as a decimal (ex: 0.1), it should be represented as a percentage (ex: 10%). This would make it easier to see on the graphs and easier for people with little research experience to understand. Another recommendation I have is to make the histogram bars a lighter and more transparent color on the inside (fill) and keep a dark outline for the bars. This would make the graph to seem more simple and the coloration of the graph would be less aggressive. I think this could help reduce visual clutter.**
 
