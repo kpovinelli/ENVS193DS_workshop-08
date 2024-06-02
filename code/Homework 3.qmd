@@ -138,3 +138,19 @@ ggpredict(model4,
 
 ## e.
 **Water treatment and species were the predictors that best described total mass (AIC = -159.2). On average, well-watered plants had a higher total biomass than drought stressed plants. On average Grindelia camporum had the highest total biomass with Eschscholzia californica, Nasella pulchra, and Encelia californica slightly smaller than it. On average Acmispon glaber had the lowest total biomass wiht Penstemon centranthifolius and Salvia leucophylla slightly bigger than it.**
+
+# Problem 2
+
+# Problem 3
+## a.
+**This study measured the probability of food insecurity among people with disabilities. There was a focus on number of disabilities and type of disabilities. The author uses a logistical regression to model the probability of any and severe food insecurity as a function of the number of disabilities and the type of disability, controlling for socio-demographic variables.**
+**INSERT FIGURE 1**
+
+## b. 
+**The first graph is a line plot which shows the probability of food insecurity (y-axis) based on the number of disabilities (x-axis). The second graph is a  histogram plot which shows the probability of food insecurity (y-axis) based on the category of disability (x-axis). The author's choice to separate these graphs made senese since number of disabilities is continuous data and the catergory of disability is categorical data. Both graphs show the mean probability of food insecurity and the standard error, but do not show the underlying data.**
+
+## c.
+**The authors did a good job handling 'visual clutter.' They graphs are relatively simple and primarily focus on the probabilities for each x value. **
+
+
+
