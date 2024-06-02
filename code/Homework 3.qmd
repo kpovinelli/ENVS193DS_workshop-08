@@ -140,6 +140,8 @@ ggpredict(model4,
 **Water treatment and species were the predictors that best described total mass (AIC = -159.2). On average, well-watered plants had a higher total biomass than drought stressed plants. On average Grindelia camporum had the highest total biomass with Eschscholzia californica, Nasella pulchra, and Encelia californica slightly smaller than it. On average Acmispon glaber had the lowest total biomass wiht Penstemon centranthifolius and Salvia leucophylla slightly bigger than it.**
 
 # Problem 2
+## a.
+**For my data, I could do a piece of art. I would first change my graph to be a line plot with number of times the water bottle was refilled on the y-axis and date on the x-axis. I am thinking that the line of data could be the water flowing into the bottle. I would then draw a bottle below it to catch the water. This would be affective visualization because it includes the data and art that resembles what the data is of.**
 
 # Problem 3
 ## a.
