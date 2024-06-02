@@ -150,7 +150,8 @@ ggpredict(model4,
 **The first graph is a line plot which shows the probability of food insecurity (y-axis) based on the number of disabilities (x-axis). The second graph is a  histogram plot which shows the probability of food insecurity (y-axis) based on the category of disability (x-axis). The author's choice to separate these graphs made senese since number of disabilities is continuous data and the catergory of disability is categorical data. Both graphs show the mean probability of food insecurity and the standard error, but do not show the underlying data.**
 
 ## c.
-**The authors did a good job handling 'visual clutter.' They graphs are relatively simple and primarily focus on the probabilities for each x value. **
+**The authors did a good job handling 'visual clutter.' They graphs are relatively simple and primarily focus on the probabilities for each x value. The data:ink ratio is relatively high. There data is portrayed in a simple matter and is not cluttered or overwhelmed by gridlines and extraneous elements.**
 
-
+## d.
+****
 
