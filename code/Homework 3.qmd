@@ -1,7 +1,7 @@
 ---
 title: "Homework 3"
-format:
-  html: 
+format: 
+  html: docx
     toc: true # includes a table of contents in rendered html format
 execute: # for all code chunks
     warning: false # do not display warnings
@@ -26,6 +26,7 @@ library(MuMIn)
 
 # model predictions
 library(ggeffects)
+library(ggplot2)
 
 # model tables
 library(gtsummary)
@@ -119,7 +120,21 @@ modelsummary(models, # this function takes a list of models
 ## b.
 **To examine the influence of specific leaf area, water treatment, and species on total biomass, I created 5 models. The null model was a function of none of the predictors on total biomass, while model 1 was a function of all of the predictors on total biomass. Models 2, 3, and 4 were functions of 2 different predictors on total biomass. To determine the model that best described the influences on total biomass, I used multiple linear regression and found that model 4 (total biomass as a function of water treatment and species) had the lowest AIC value (-159.2). To evaluate linear model assumptions, I plotted model 4 and found that it was linear, normally distributed, homoscedastic, and has no high leverage points.**
 
-## c.
+## c + d.
+```{r}
+ggpredict(model4, 
+          terms = c("water_treatment", 
+                    "species_name")) %>% 
+  plot(show_data = TRUE,
+       facets = TRUE,
+       show_legend = FALSE,
+      colors = "ipsum") +
+  theme_classic() +
+  labs(title = "Total biomass as a function of water treatment and species",
+       x = "Water Treatment",
+       y = "Total Biomass (g)",
+      caption = str_wrap("Figure 1. Total biomass as a function of water treatment and species. The darkest dot represents the model prediction and the transparent dots represent the underlying data. Data source: Valliere JM, Zhang J, Sharifi MR, Rundel PW. Can we condition native plants to increase drought tolerance and improve restoration success? Ecol Appl. 2019 Apr;29(3):e01863. doi: 10.1002/eap.1863. Epub 2019 Mar 4. PMID: 30831005."))
+```
 
-
-
+## e.
+**Water treatment and species were the predictors that best described total mass (AIC = -159.2). On average, well-watered plants had a higher total biomass than drought stressed plants. On average Grindelia camporum had the highest total biomass with Eschscholzia californica, Nasella pulchra, and Encelia californica slightly smaller than it. On average Acmispon glaber had the lowest total biomass wiht Penstemon centranthifolius and Salvia leucophylla slightly bigger than it.**
