@@ -122,18 +122,18 @@ modelsummary(models, # this function takes a list of models
 
 ## c + d.
 ```{r}
-ggpredict(model4, 
-          terms = c("water_treatment", 
+ggpredict(model4, #selects model 4 to be analyzed
+          terms = c("water_treatment", # focuses on the water treatment and species name
                     "species_name")) %>% 
-  plot(show_data = TRUE,
-       facets = TRUE,
-       show_legend = FALSE,
+  plot(show_data = TRUE, # shows the underlying data
+       facets = TRUE, # facets the data based on species name
+       show_legend = FALSE, # stops the legend from showing
       colors = "ipsum") +
-  theme_classic() +
-  labs(title = "Total biomass as a function of water treatment and species",
-       x = "Water Treatment",
-       y = "Total Biomass (g)",
-      caption = str_wrap("Figure 1. Total biomass as a function of water treatment and species. The darkest dot represents the model prediction and the transparent dots represent the underlying data. Data source: Valliere JM, Zhang J, Sharifi MR, Rundel PW. Can we condition native plants to increase drought tolerance and improve restoration success? Ecol Appl. 2019 Apr;29(3):e01863. doi: 10.1002/eap.1863. Epub 2019 Mar 4. PMID: 30831005."))
+  theme_classic() + # adds color to the graph
+  labs(title = "Total biomass as a function of water treatment and species", # title
+       x = "Water Treatment", # x-axis title
+       y = "Total Biomass (g)", # y-axis title
+      caption = str_wrap("Figure 1. Total biomass as a function of water treatment and species. The darkest dot represents the model prediction and the transparent dots represent the underlying data. Data source: Valliere JM, Zhang J, Sharifi MR, Rundel PW. Can we condition native plants to increase drought tolerance and improve restoration success? Ecol Appl. 2019 Apr;29(3):e01863. doi: 10.1002/eap.1863. Epub 2019 Mar 4. PMID: 30831005.")) # caption that wraps to prevent it from going off the page
 ```
 
 ## e.
