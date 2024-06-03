@@ -16,6 +16,8 @@
 ├── ENVS193DS_workshop-08.Rproj
 ├── README.md                                 # information about the repository
 ├── code
+│   ├── homework 3.docx                       # docx file of code
+│   ├── homework 3.html                       # rendered HTML of code
 │   ├── homework 3.qmd                        # qmd file with information
 │   ├── homework-starter-doc_KEY.html         # rendered HTML of key code
 │   ├── homework-starter-doc_KEY.qmd          # key code file
@@ -29,11 +31,5 @@
 
 # Rendered output
 
-The rendered .html for this repo is [here](https://an-bui.github.io/ENVS193DS_workshop-08/code/homework-starter-doc_KEY.html).
-
-# For full credit
-
-Your GitHub READMEs should have at least a "General information" section, a "Data and file overview" section, and a "Rendered output" section in your README for full credit.  
-
-Note that the "Data and file overview" section does not have to look exactly like the one in this repo; it can be a list of folders and files that you write out. See [this repository](https://github.com/an-bui/new-repository) as an example.
+The rendered .html for this repo is [here](https://github.com/kpovinelli/ENVS193DS_workshop-08/blob/main/code/Homework%203.html).
 
