@@ -143,6 +143,12 @@ ggpredict(model4,
 ## a.
 **For my data, I could do a piece of art. I would first change my graph to be a line plot with number of times the water bottle was refilled on the y-axis and date on the x-axis. I am thinking that the line of data could be the water flowing into the bottle. I would then draw a bottle below it to catch the water. This would be affective visualization because it includes the data and art that resembles what the data is of.**
 
+## b.
+
+## c.
+
+## d. 
+
 # Problem 3
 ## a.
 **This study measured the probability of food insecurity among people with disabilities. There was a focus on number of disabilities and type of disabilities. The author uses a logistical regression to model the probability of any and severe food insecurity as a function of the number of disabilities and the type of disability, controlling for socio-demographic variables.**
