@@ -1,9 +1,9 @@
-# ENVS 193DS Workshop 8/Homework 3 repository
+# ENVS 193DS Homework 3
 ## Spring 2024
 
 # General information
 
-**Description**: repo for Workshop 8 that provides the foundation for Homework 3  
+**Description**: This is Keaton Povinelli's completed Homework 3 assignment.
 
 **Research focus**: examining effects of specific leaf area (mm^2^/g), water treatment (well-watered or drought-stressed), and species on plant mass  
 
@@ -16,10 +16,11 @@
 ├── ENVS193DS_workshop-08.Rproj
 ├── README.md                                 # information about the repository
 ├── code
+│   ├── homework 3.qmd                        # qmd file with information
 │   ├── homework-starter-doc_KEY.html         # rendered HTML of key code
 │   ├── homework-starter-doc_KEY.qmd          # key code file
 │   ├── homework-starter-doc_KEY_files        # files associated with rendered HTML
-│   │   ├── figure-html                       # all figure outputs (explore this file!)
+│   │   ├── figure-html                       # all figure outputs 
 │   │   └── libs                              # accessory files for HTML
 │   └── homework-starter-doc_TEMPLATE.qmd     # template code file
 └── data
